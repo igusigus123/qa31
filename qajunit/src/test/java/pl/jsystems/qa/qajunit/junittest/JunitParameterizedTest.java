@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import pl.jsystems.qa.qajunit.ConfigJunit;
 
@@ -43,6 +44,36 @@ public class JunitParameterizedTest extends ConfigJunit {
     public void paramMultiValueFileTest(String text, int number) {
         assertThat(text).contains("Hello");
         assertTrue(number % 5 == 0);
+    }
+
+    @DisplayName("Enum param test")
+    @ParameterizedTest(name = "Enum param test: {0}")
+    @EnumSource(value = ParamEnum.class)
+    public void enumTest(ParamEnum paramEnum){
+        assertThat(paramEnum.toString().contains("ENUM"));
+
+    }
+
+
+    String resultString = "Wordpress powers 100% of the internet";
+    String expectedString = "Wordpress powers [number]% of the internet";
+
+    @ParameterizedTest(name = "Wordpress test: {0}")
+    @ValueSource(strings = {"1", "1000", "10000"})
+    public void wordpressTest (String value) {
+        String resultString = "Wordpress powers " + value + "% of the internet";
+
+        assertThat(resultString).startsWith("Wordpress powers ");
+        assertThat(resultString).endsWith("% of the internet");
+        assertThat(resultString).matches("Wordpress powers \\d+% of the internet");
+        String result = resultString.replace("Wordpress powers ", "").replace("% of the internet", "");
+        assertThat(result).matches("^\\d+$");
+        int resultNumber = Integer.parseInt(result);
+        assertThat(resultNumber > 0);
+    }
+    enum ParamEnum{
+        ENUM_ONE,
+        ENUM_TWO
     }
 
 }
