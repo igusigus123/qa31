@@ -46,3 +46,4 @@ public class JunitParameterizedTest extends ConfigJunit {
     }
 
 }
+
