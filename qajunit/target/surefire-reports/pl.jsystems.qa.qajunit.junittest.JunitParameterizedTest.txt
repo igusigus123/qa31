@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: pl.jsystems.qa.qajunit.junittest.JunitParameterizedTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.947 s - in pl.jsystems.qa.qajunit.junittest.JunitParameterizedTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.896 s - in pl.jsystems.qa.qajunit.junittest.JunitParameterizedTest

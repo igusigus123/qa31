@@ -1,5 +1,6 @@
+pl\jsystems\qa\qajunit\junittest\JunitParameterizedTest$ParamEnum.class
+pl\jsystems\qa\qajunit\junittest\JunitTest.class
 pl\jsystems\qa\qajunit\junittest\JunitParameterizedTest.class
 pl\jsystems\qa\qajunit\ConfigJunit.class
-pl\jsystems\qa\qajunit\junittest\JunitTest.class
 pl\jsystems\qa\qajunit\junitApi\ApiTestJunitTest.class
 pl\jsystems\qa\qajunit\junittest\JunitTest$NestedTest.class
